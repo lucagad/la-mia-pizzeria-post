@@ -27,18 +27,16 @@
                   </thead>
 
                   <tbody>
-                  @{
-                      int count = 0;
-                  }
+                  
                   @foreach (Pizza pizza in @Model)
                   {
                       <tr>
-                          <th scope="row">@count</th>
+                          <th scope="row">@pizza.PizzaId</th>
                           <td><img class="table-img-custom" src="@pizza.ImgUrl" alt="@pizza.Name"></td>
                           <td>@pizza.Name</td>
                           <td>@pizza.Price €</td>
                           <td>
-                              <a class="btn btn_custom_info" href="@Url.Action("Show", "Pizza", new { id = count++ })"><i class="fas fa-info-circle"></i></a>
+                              <a class="btn btn_custom_info" href="@Url.Action("Show", "Pizza", new { id= @pizza.PizzaId })"><i class="fas fa-info-circle"></i></a>
                               <a class="btn btn_custom_edit" href="#"><i class="fas fa-edit"></i></a>
                               <a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
                           </td>
