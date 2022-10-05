@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using la_mia_pizzeria_post;
 
 namespace la_mia_pizzeria_static.Models;
 
@@ -15,6 +16,7 @@ public class Pizza
     
     [Required(ErrorMessage = "Il campo è obbligatorio")]
     [StringLength (100, ErrorMessage = "La descrizione non può avere più di 100 caratteri")]
+    [MoreThanFiveWordValidation]
     public string Description  { get; set; }
     
     [Required(ErrorMessage = "Il campo è obbligatorio")]
