@@ -19,8 +19,9 @@ public class Pizza
     {
         
     }
-    public Pizza(string name, string description, string img , double price)
+    public Pizza(int id, string name, string description, string img , double price)
     {
+        PizzaId = id;
         Name = name;
         Description = description;
         ImgUrl = img;
