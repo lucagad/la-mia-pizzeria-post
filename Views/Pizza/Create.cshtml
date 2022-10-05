@@ -17,17 +17,20 @@
 
                     <div class="card-body d-flex flex-column flex-md-row row">
                         
-                        <form action="#" method="POST" enctype="multipart/form-data" id="item-form">
-                        
+                        <form asp-controller="Pizza" asp-action="Create" method="post">
+                            @Html.AntiForgeryToken()
+                            
                             @*{{-- Nome prodotto --}}*@
                             <div class="form-group">
                                 <label class="font-weight-bold" for="name">Nome del prodotto</label>
                                 <input type="text"
                                        value=""
                                        class="form-control"
+                                       asp-for="Name"
                                        id="name"
                                        name="name"
                                        placeholder="Inserisci il nome del Prodotto">
+                                <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
                         
                             @*{{-- Prezzo prodotto --}}*@
@@ -36,9 +39,11 @@
                                 <input type="text"
                                        value=""
                                        class="form-control"
+                                       asp-for="Price"
                                        id="price"
                                        name="price"
                                        placeholder="Inserisci il Prezzo">
+                                <span asp-validation-for="Price" class="text-danger"></span>
                             </div>
                         
                             @*{{-- Descrizione prodotto --}}*@
@@ -47,30 +52,27 @@
                                 <textarea type="text"
                                             rows="6"
                                             class="form-control"
+                                            asp-for="Description"
                                             id="description"
                                             name="description"
                                             placeholder="Inserisci la descrizione del Prodotto"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
                             </div>
                                                     
                             @*{{-- Inserimento Immagini --}}*@
                             <div class="form-group">
                                 <label class="font-weight-bold" for="item-image">Aggiungi l'immagine del prodotto</label>
-                                <input type="file" 
-                                       class="form-control-file" 
+                                <input type="text" 
+                                       class="form-control" 
+                                       asp-for="ImgUrl"
                                        id="item-image" 
-                                       name="image">
+                                       name="ImgUrl">
+                                <span asp-validation-for="ImgUrl" class="text-danger"></span>
                             </div>
-                                                    
-                            <div id="new-image-box" class="d-none">
-                                <p for="immagine-prodotto">Immagine inserita:</p>
-                                <img id="new-image" name="immagine-prodotto" style="max-width: 50%" src="" alt="Nuova Immagine">
-                            </div>
-
+                        
                             @*{{-- Submit --}}*@
                             <button type="submit" class="btn btn_custom">Salva</button>
-                            </form>
-
-
+                        </form>
                     </div>
                 </div>
             </div>
