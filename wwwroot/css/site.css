@@ -52,6 +52,16 @@ footer {
 // BOTTONI CRUD
 */
 
+.btn_custom{
+  background-color: #00D7C7;
+  border-color:#00D7C7;
+  color: white;
+}
+
+.btn_custom:hover{
+   color: #4F126F;
+}
+
 .btn_custom_info,
 .btn_custom_edit,
 .btn_custom_delete{
