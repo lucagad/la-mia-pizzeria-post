@@ -27,4 +27,11 @@ public class PizzaController : Controller
 
         return View("Show",listaPizze[id]);
     }
+    
+    public IActionResult Create()
+    {
+        List<Pizza> listaPizze = new List<Pizza>();
+        
+        return View("Create");
+    }
 }
